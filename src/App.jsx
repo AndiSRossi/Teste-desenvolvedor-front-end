@@ -47,11 +47,7 @@ function ToDoList() {
     <div className="max-w-7xl mx-auto p-6">
       <header className="flex items-center justify-center space-x-4 mb-6">
         <h2 className="text-6xl font-bold text-shadow-lg">Lista de tarefas</h2>
-        <img
-          src="src/assets/img/react.svg"
-          alt="Logo do React"
-          className="w-10 h-10"
-        />
+        <img src="/img/react.svg" alt="Logo do React" className="w-20 h-20" />
       </header>
 
       <AddTaskToggle setTasks={setTasks} />
