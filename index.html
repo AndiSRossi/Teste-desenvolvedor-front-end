@@ -1,64 +1,87 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+-->
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-tema="claro">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <aside class="menu white-bg">
-        <div class="main-content menu-content">
-            <h1><a href="#inicio">Logo</a></h1>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#todo">To do list</a></li>
-                <li class="dropdown-submenu">
-                    <a href="#" id="botao-tema">Alterar Tema</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" onclick="setTema('claro')">Claro</a></li>
-                        <li><a href="#" onclick="setTema('escuro')">Escuro</a></li>
-                    </ul>
-                </li>
+      <div class="main-content menu-content">
+        <h1><a href="#inicio">Logo</a></h1>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#todo">To do list</a></li>
+          <li class="dropdown-submenu">
+            <a href="#" id="botao-tema">Alterar Tema</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" onclick="setTema('claro')">Claro</a></li>
+              <li><a href="#" onclick="setTema('escuro')">Escuro</a></li>
             </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </aside>
 
     <section id="inicio" class="section">
-        <div class="main-content intro-content">
-            <div class="intro-text-content">
-                <h1>Teste para Desenvolvedor Front-End</h1>
-            </div>
-            <div class="intro-img">
-                <img src="assets/img/java-script.svg" alt="Desenho de pessoas interagindo com logo do CSS, JS e HTML">
-            </div>
+      <div class="main-content intro-content">
+        <div class="intro-text-content">
+          <h1>Teste para Desenvolvedor Front-End</h1>
         </div>
-        <div class="pai-da-counter">
-            <div class="counter">
-                <button id="botaoIniciar">Iniciar contador</button>
-                <p id="contador"></p>
-            </div>
+        <div class="intro-img">
+          <img
+            src="src/assets/img/java-script.svg"
+            alt="Desenho de pessoas interagindo com logo do CSS, JS e HTML"
+          />
         </div>
-
+      </div>
+      <div class="pai-da-counter">
+        <div class="counter">
+          <button id="botaoIniciar">Iniciar contador</button>
+          <p id="contador"></p>
+        </div>
+      </div>
     </section>
 
     <section id="todo" class="white-bg section">
-        <div class="main-content to-do">
-            <h2>To-Do List</h2>
-            <div id="root"></div>
-        </div>
+      <div class="main-content to-do">
+        <h2>To-Do List</h2>
+        <div id="root"></div>
+      </div>
     </section>
 
     <footer id="footer" class="white-bg">
-        <p><a rel="nofollow" target="_blank" href="#">Feito por Anderson Silva.</a></p>
+      <p>
+        <a rel="nofollow" target="_blank" href="#">Feito por Anderson Silva.</a>
+      </p>
     </footer>
 
-    <script src="assets/js/contador.js"></script>
-    <script src="assets/js/set-tema.js"></script>
-
-</body>
-
+    <script src="src/assets/js/contador.js"></script>
+    <script src="src/assets/js/set-tema.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
