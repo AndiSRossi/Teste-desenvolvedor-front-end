@@ -1,19 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="pt-BR" data-tema="claro">
   <head>
@@ -30,12 +14,12 @@
   </head>
 
   <body>
-    <aside class="menu white-bg">
+    <header class="menu white-bg">
       <div class="main-content menu-content">
         <h1><a href="#inicio">Logo</a></h1>
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#todo">To do list</a></li>
+          <li><a href="#todo">Lista de tarefas </a></li>
           <li class="dropdown-submenu">
             <a href="#" id="botao-tema">Alterar Tema</a>
             <ul class="dropdown-menu">
@@ -45,12 +29,14 @@
           </li>
         </ul>
       </div>
-    </aside>
+    </header>
 
     <section id="inicio" class="section">
       <div class="main-content intro-content">
         <div class="intro-text-content">
-          <h1>Teste para Desenvolvedor Front-End</h1>
+          <h1 class="text-9xl font-bold leading-relaxed">
+            Teste para Desenvolvedor Front-End
+          </h1>
         </div>
         <div class="intro-img">
           <img
@@ -62,14 +48,13 @@
       <div class="pai-da-counter">
         <div class="counter">
           <button id="botaoIniciar">Iniciar contador</button>
-          <p id="contador"></p>
+          <p id="contador" class="text-4xl px-6 py-3 text-center"></p>
         </div>
       </div>
     </section>
 
-    <section id="todo" class="white-bg section">
-      <div class="main-content to-do">
-        <h2>To-Do List</h2>
+    <section id="todo" class="section">
+      <div class="to-do">
         <div id="root"></div>
       </div>
     </section>

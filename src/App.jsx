@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import AddTask from "./components/AddTask";
+import AddTaskToggle from "./components/AddTaskToggle";
+import Tasks from "./components/Tasks";
 
-function App() {
-  const [count, setCount] = useState(0)
+function ToDoList() {
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      return JSON.parse(savedTasks);
+    } else {
+      return [
+        {
+          id: 1,
+          title: "Estudar React",
+          description: "Estudar os conceitos básicos do React",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Fazer exercícios",
+          description: "Praticar com exercícios de fixação",
+          completed: true,
+        },
+        {
+          id: 3,
+          title: "Criar um projeto",
+          description: "Desenvolver um projeto simples usando React",
+          completed: false,
+        },
+      ];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  function onTaskClick(taskId) {
+    const newTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(newTasks);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="max-w-7xl mx-auto p-6">
+      <header className="flex items-center justify-center space-x-4 mb-6">
+        <h2 className="text-6xl font-bold text-shadow-lg">Lista de tarefas</h2>
+        <img
+          src="src/assets/img/react.svg"
+          alt="Logo do React"
+          className="w-10 h-10"
+        />
+      </header>
+
+      <AddTaskToggle setTasks={setTasks} />
+
+      <Tasks tasks={tasks} setTasks={setTasks} onTaskClick={onTaskClick} />
+    </div>
+  );
 }
 
-export default App
+export default ToDoList;
