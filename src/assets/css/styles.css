@@ -280,8 +280,8 @@ html[data-tema="escuro"] {
 @media (max-width: 768px) {
   .menu-content {
     display: flex;
-    flex-direction: row; /* <-- manter em linha */
-    justify-content: space-between; /* <-- separa logo e botão */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     max-width: 100%;
@@ -373,7 +373,7 @@ html[data-tema="escuro"] {
 
 @media (max-width: 480px) {
   body {
-    font-size: 1.6rem; /* reduz fonte geral para caber melhor */
+    font-size: 1.6rem;
   }
 
   .menu-content {
